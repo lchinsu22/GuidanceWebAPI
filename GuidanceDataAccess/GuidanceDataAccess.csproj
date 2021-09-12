@@ -43,6 +43,8 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -52,7 +54,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
-    <Compile Include="DAModel\Patient.cs" />
+    <Compile Include="DAModel\CRUDContext.cs" />
+    <Compile Include="DAModel\FormContext.cs" />
+    <Compile Include="DAModel\ICRUDContext.cs" />
+    <Compile Include="DAModel\IFormContext.cs" />
+    <Compile Include="DAModel\MasterList\Doctor.cs" />
+    <Compile Include="DAModel\GuidanceContext.cs" />
+    <Compile Include="DAModel\MasterList\Gender.cs" />
+    <Compile Include="DAModel\MasterList\HospitalDeptUnit.cs" />
+    <Compile Include="DAModel\Form\Patient.cs" />
+    <Compile Include="DAModel\MasterList\Ward.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
