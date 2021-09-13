@@ -1,4 +1,5 @@
-﻿using GuidanceWebAPI.DAService;
+﻿using System.Collections.Generic;
+using GuidanceWebAPI.DAService;
 using GuidanceWebAPI.DTOModel.Form;
 
 namespace GuidanceWebAPI.DTOService
@@ -34,6 +35,12 @@ namespace GuidanceWebAPI.DTOService
         {
             var item = _formDAService.FindPatient(Id);
             return new PatientDTO().getDTO(item);
+        }
+
+        public List<PatientDTO> GetAllPatients()
+        {
+            var item = _formDAService.GetAllPatients();
+            return new PatientDTO().getDTOs(item);
         }
     }
 }

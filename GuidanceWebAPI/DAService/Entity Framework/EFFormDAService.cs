@@ -36,5 +36,10 @@ namespace GuidanceWebAPI.DAService.Entity_Framework
         {
             return _formcontext.DeletePatient(Id);
         }
+
+        public List<Patient> GetAllPatients()
+        {
+            return _formcontext.GetAllPatients();
+        }
     }
 }

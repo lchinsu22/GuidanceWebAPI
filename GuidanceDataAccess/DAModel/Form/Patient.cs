@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace GuidanceDataAccess.DAModel.Form
 {
+
     public class Patient
     {
         [Key]
@@ -26,20 +27,20 @@ namespace GuidanceDataAccess.DAModel.Form
 
         public string City { get; set; }
 
-        public int PostalCode { get; set; }
+        public int? PostalCode { get; set; }
 
-        public int WardId { get; set; }
+        public int? WardId { get; set; }
 
         public string Bed { get; set; }
 
-        public int HospitalDeptUnitId { get; set; }      
+        public int? HospitalDeptUnitId { get; set; }      
 
         [Required]
         [Column(TypeName = "date")]
         public DateTime AdmissionDate { get; set; }
 
         [Column(TypeName = "date")]
-        public DateTime DischargedDate { get; set; }
+        public DateTime? DischargedDate { get; set; }
 
         [Required]
         public int DoctorId { get; set; }

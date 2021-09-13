@@ -9,6 +9,12 @@ namespace GuidanceDataAccess.DAModel.MasterList
     [Table("refHospitalDeptUnit")]
     public partial class HospitalDeptUnit
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public HospitalDeptUnit()
+        {
+            Patients = new HashSet<Patient>();
+        }
+
         [Key]
         public int HospitalDeptUnitId { get; set; }
 
@@ -20,7 +26,8 @@ namespace GuidanceDataAccess.DAModel.MasterList
 
         public int SortIndex { get; set; }
 
-        public virtual List<Patient> Patients { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Patient> Patients { get; set; }
     }
 
 }

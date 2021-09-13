@@ -13,5 +13,6 @@ namespace GuidanceWebAPI.DTOService
         PatientDTO SavePatientDetail(PatientDTO patient);
         PatientDTO Find(long Id);
         int DeletePatient(long Id);
+        List<PatientDTO> GetAllPatients();
     }
 }

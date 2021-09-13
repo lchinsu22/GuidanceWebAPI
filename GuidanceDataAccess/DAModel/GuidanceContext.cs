@@ -24,5 +24,19 @@ namespace GuidanceDataAccess.DAModel
         public virtual DbSet<HospitalDeptUnit> HospitalDeptUnits { get; set; }
         public virtual DbSet<Doctor> Doctors { get; set; }
         public virtual DbSet<Gender> Genders { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<HospitalDeptUnit>()
+                .HasMany(e => e.Patients)
+                .WithOptional(e => e.HospitalDeptUnit)
+                .WillCascadeOnDelete();
+
+            modelBuilder.Entity<Ward>()
+                .HasMany(e => e.Patients)
+                .WithOptional(e => e.Ward)
+                .WillCascadeOnDelete();
+
+        }
     }
 }

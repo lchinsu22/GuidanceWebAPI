@@ -1,4 +1,5 @@
-﻿using System.Web.Http;
+﻿using System.Collections.Generic;
+using System.Web.Http;
 using GuidanceDataAccess.DAModel.Form;
 using GuidanceWebAPI.DTOModel.Form;
 using GuidanceWebAPI.DTOService;
@@ -37,6 +38,20 @@ namespace GuidanceWebAPI.Controllers.Form
         public IHttpActionResult FindPatient(int id)
         {
             PatientDTO result = _formDTOService.Find(id);
+            if (result == null)
+            {
+                return NotFound();
+            }
+            return Ok(result);
+        }
+
+        [HttpGet]
+        [Route("api/Patient")]
+        [CustomControllerExceptionFilter]
+        [CustomControllerActionFilter]
+        public IHttpActionResult GetAllPatient()
+        {
+            List<PatientDTO> result = _formDTOService.GetAllPatients();
             if (result == null)
             {
                 return NotFound();

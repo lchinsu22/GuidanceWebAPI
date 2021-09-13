@@ -94,9 +94,29 @@ namespace GuidanceDataAccess.DAModel
 
         public Patient FindPatient(long Id)
         {
-            return Set<Patient>().Find(Id);
+            try
+            {
+                return Set<Patient>().Find(Id);
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+
         }
 
+        public List<Patient> GetAllPatients()
+        {
+            try
+            {
+                return Set<Patient>().ToList();
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+
+        }
     }
 }
 

@@ -16,14 +16,14 @@ namespace GuidanceWebAPI.DTOModel.Form
         public int GenderId { get; set; }
         public string GenderName { get; set; }
         public string City { get; set; }
-        public int PostalCode { get; set; }
-        public int WardId { get; set; }
+        public int? PostalCode { get; set; }
+        public int? WardId { get; set; }
         public string WardName { get; set; }
         public string Bed { get; set; }
-        public int HospitalDeptUnitId { get; set; }
+        public int? HospitalDeptUnitId { get; set; }
         public string HospitalDeptUnitName { get; set; }
         public DateTime AdmissionDate { get; set; }
-        public DateTime DischargedDate { get; set; }
+        public DateTime? DischargedDate { get; set; }
         public int DoctorId { get; set; }
         public string DoctorName { get; set; }
 

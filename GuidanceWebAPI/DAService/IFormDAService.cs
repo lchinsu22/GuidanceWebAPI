@@ -12,5 +12,6 @@ namespace GuidanceWebAPI.DAService
         Patient FindPatient(long Id);
         Patient SavePatient(Patient patient);
         int DeletePatient(long Id);
+        List<Patient> GetAllPatients();
     }
 }
